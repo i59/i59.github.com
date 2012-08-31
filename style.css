@@ -33,6 +33,7 @@ hr
 {
 	padding-left: 15px;
 	padding-right: 15px;
+	padding-bottom: 15px;
 }
 
 #content
@@ -75,4 +76,45 @@ h2
 	font-size: 20px;
 	color: #3085BA;
 	font-weight: normal;
+}
+
+.main_link
+{
+	text-decoration: none;
+	color: #3085BA;
+	font-weight: normal;
+}
+
+.fancy_link
+{
+	width: 89px; 
+	height: 40px; 
+	float: left; 
+	background-color: #DEDEDE; border-radius: 5px;
+	border: 1px solid #D2D2D2;
+	box-shadow: inset white 0 1px 0,inset rgba(0, 0, 0, 0.03) 0 -1px 0;
+}
+
+.fancy_link a
+{
+	line-height: 1;
+	font-size: 11px;
+	color: #999;
+	display: block;
+	text-align: center;
+	padding-top: 6px;
+	height: 40px;
+	font-weight: 400;
+	text-decoration: none;
+}
+
+.fancy_link a strong {
+	font-size: 14px;
+	display: block;
+	color: #222;
+}
+
+.project_type {
+	color: #999;
+	font-size: 12px;
 }
