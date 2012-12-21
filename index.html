@@ -3,9 +3,10 @@
 <head>
   <title>Filip Lundgren - Tools / Game Programmer</title>
   <link href="style.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="csharp.css" >
   
-  <script language="javascript" src="shCoreStaticMaker.js"></script>
-  <link type="text/css" rel="stylesheet" href="SyntaxHighlighterModified.css"></link>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+  <script type="text/javascript" src="custom.js"></script>
 </head>
 
 <body>
@@ -15,161 +16,194 @@
 		<p><span class="dev_occupation">Game & Tools Programmer</span></p>
 	</div>
 	
-	<div id="content">
-		<div id="content_wrap">
-		<!--	<h1>About me</h1>
-
-			<hr> -->
-			<h1><a name="crymono">CryMono <span class="project_type">Developer tool</span></a></h1>
-			
-			<p>CryMono is a Mono integration for CryENGINE3 that adds full .NET support to the game engine, allowing game logic to be scripted in C# and other languages as an alternative to the currently used Lua.</p>
-			
-			<p>Using CryMono, developers can create custom entities, game rules, flow nodes, UI setups and more. Scripts are also reloaded at runtime when edited, allowing for a truly intuitive developer experience.</p>
-
-			<div class="fancy_link" style="float: right;">
-				<a href="https://github.com/inkdev/CryMono">
-				View on
-				<strong>GitHub</strong>
-				</a>
-			</div>
-			
-			<h2>CryMono usage video</h2>
-			<p>The video below demonstrates some of the features CryMono delivers to developers.</p>
-			<center><iframe width="850" height="480" src="http://www.youtube.com/embed/ExxYubYKoMg" frameborder="0" allowfullscreen></iframe></center>
-			
-			<h2>C# Entity Sample</h2>
-			<p>The code sample below demonstrates how easy it is to create an CryENGINE entity support model loading and physicalization. Simply drop the script into Game\Scripts\Entities and it will be automatically loaded and registered on engine startup.</p></p>
-			<div style="float: left;"><div style="width: 75%; float: left;"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol start="1" class="dp-c"><li class="alt"><span><span class="keyword">using</span><span>&nbsp;CryEngine;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="keyword">namespace</span><span>&nbsp;CryGameCode.Entities&nbsp;&nbsp;</span></span></li><li class=""><span>{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">class</span><span>&nbsp;Dragon&nbsp;:&nbsp;Entity&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Port(Name&nbsp;=&nbsp;<span class="string">"Let&nbsp;panic&nbsp;ensue"</span><span>,&nbsp;Description&nbsp;=&nbsp;</span><span class="string">"Kill&nbsp;them&nbsp;all."</span><span>)]&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;FlyAroundAndSetPeopleOnFire()&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;TODO</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.LogAlways(<span class="string">"eek"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">override</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;OnSpawn()&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LoadObject(Model);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;spawnedPort.Activate();&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">protected</span><span>&nbsp;</span><span class="keyword">override</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;OnReset(</span><span class="keyword">bool</span><span>&nbsp;enteringGame)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LoadObject(Model);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Physics.Mass&nbsp;=&nbsp;5000;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Physics.Type&nbsp;=&nbsp;PhysicalizationType.Rigid;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Physics.Stiffness&nbsp;=&nbsp;70;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Port(Name&nbsp;=&nbsp;<span class="string">"Spawned"</span><span>,&nbsp;Description&nbsp;=&nbsp;</span><span class="string">""</span><span>)]&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;OutputPort&nbsp;spawnedPort;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[EditorProperty(Type&nbsp;=&nbsp;EntityPropertyType.Object,&nbsp;DefaultValue=<span class="string">"Objects/Characters/Dragon/Dragon.cdf"</span><span>)]&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">string</span><span>&nbsp;Model&nbsp;{&nbsp;</span><span class="keyword">get</span><span>&nbsp;{&nbsp;</span><span class="keyword">return</span><span>&nbsp;GetObjectFilePath();&nbsp;}&nbsp;</span><span class="keyword">set</span><span>&nbsp;{&nbsp;LoadObject(value);&nbsp;}&nbsp;}&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol><textarea style="display:none;" class="originalCode">using CryEngine;
-
-using CryEngine;
-
-namespace CryGameCode.Entities
-{
-	[Entity(Category="Samples", EditorHelper="Editor/Objects/anchor.cgf", Icon="")]
-    public class SampleEntity : Entity
-	{
-		public override void OnSpawn()
-		{
-			spawnedPort.Activate();
-		}
-
-		#region Entity Flownode ports
-		[Port(Name = "Physicalize", Description = "")]
-		public void Physicalize()
-		{
-			LoadObject(Model);
-
-			Physics.Mass = Mass;
-			Physics.Type = PhysicalizationType.Rigid;
-			Physics.Stiffness = 70;
-		}
-
-		[Port(Name = "OnSpawn", Description = "")]
-		public OutputPort spawnedPort;
-		#endregion
-
-		#region Editor Properties
-		[EditorProperty(Min=0, Max=100)]
-		public float Mass { get; set; }
-
-        [EditorProperty(Type = EntityPropertyType.File)]
-		public string FileSelector { get; set; }
-
-		[EditorProperty(Type=EntityPropertyType.Object)]
-		public string Model { get; set; }
-
-		[EditorProperty(Type=EntityPropertyType.Texture)]
-		public string TextureSelector { get; set; }
-
-		[EditorProperty(Type=EntityPropertyType.Sound)]
-		public string SoundSelector { get; set; }
-
-		[EditorProperty(Type=EntityPropertyType.Dialogue)]
-		public string DialogueSelector { get; set; }
-
-		[EditorProperty(Type=EntityPropertyType.Color)]
-		public Vec3 ColorSelector { get; set; }
-
-		[EditorProperty]
-		public Vec3 VectorTest { get; set; }
-
-		[EditorProperty(Type=EntityPropertyType.Sequence)]
-		public string SequenceTest { get; set; }
-
-		[EditorProperty]
-		public bool BooleanTest { get; set; }
-		#endregion
-	}
-}</textarea></div></div>
+	<div id="section">
+		<span class="project_name">
+			<a name="skills">Skills</a>
+		</span>
 		
-		<img src="dragon-rollupbar.png" style="margin-top: 19px;"/></div>
+		<div id="content">
+			<div id="content_wrap">
+				<div style="width: 33%; float: left;">
+					<h2>Games</h2>
+					
+					<li><a href="#snow">SNOW</a></li>
+				</div>
+				
+				<div style="width: 33%; float: left;">
+					<h2>Tools</h2>
+					
+					<li><a href="#crymono">CryMono</a></li>
+				</div>
+				
+				<div style="width: 33%; float: right;">
+					<h2>Fundamentals</h2>
+					<p>I regularly use Git, also with previous experience of Subversion usage.</p>
+				</div>
+			</div>
 		</div>
 	</div>
 	
-	<div id="content">
-		<div id="content_wrap">
-			<h1><a name="snow">SNOW <span class="project_type">Free-to-play game</span></a></h1>
-			Powered by CryENGINE3, SNOW is a skiing and snowboarding game which looks to restart the winter sports genre. 
-			
-			As the sole programmer on the SNOW team, I have been responsible for implementing all necessary features and gameplay elements, such as player customization, ski movement and more.
-		</div>
-	</div>
+	<hr class="section_end">
 	
-	<div id="content" style="width: 73%">
-		<div id="content_wrap">
-			<h1><a name="about">About me</a></h1>
-			<p>Hello, my name is Filip Lundgren. I'm an aspiring Tools / Game Programmer with a drive to do what it takes to get where I want to be. I currently live in Vimmerby, Sweden where I work at Poppermost Productions AB.</p>
-			
-			<h2>Programming Languages</h2>
-			<ul>
-				<li><strong>C++</strong> - Primary language since 2009</li>
-				<li><strong>C#</strong> - Used since 2010, for both Game Scripting (see <a href="#crymono">CryMono</a>) and application development</li>
-				<li><strong>JAVA</strong> - Only used during programming lessons, experienced but not on a professional level</li>
-				<li><strong>Lua</strong> - Experienced with during usage of CryENGINE since 2008</li>
-				<li><strong>PHP</strong> - Beginner</li>
-				<li><strong>ActionScript</strong> - Have worked with for HUD / Menu implementation.</li>
-			</ul>
+	<div id="section">
+		<span class="project_name">
+			<a name="crymono">
+				CryMono
+				<span class="project_type">Developer tool (CryENGINE3)</span>
+			</a>
+		</span>
+		
+		<div class="fancy_link" style="float: right;">
+			<a href="https://github.com/inkdev/CryMono">
+				View on <strong>GitHub</strong>
+			</a>
+		</div>
+		
+		<div id="content" style="width: 50%;">
+			<div id="content_wrap">
+			<!--	<h1>About me</h1>
 
-			<h2>What I do</h2>
-			<ul>
-				<li><strong>Game Programming</strong> - Creation and expansion of critical game features.</li>
-				<li><strong>Tool Development</strong> - Creation and expansion of self-created tools, for example CryMono or applications to aid developers.</li>
-				<li><strong>Team Management</strong> - Strong experience in team management during development of CryMono and a cancelled FPS title.</li>
-			</ul>
+				<hr> -->
+				<p>CryMono is a Mono integration for CryENGINE3 that adds full .NET support to the game engine, allowing game logic to be scripted in C# and other languages as an alternative to the currently used Lua.</p>
+				
+				<p>Using CryMono, developers can create custom entities, game rules, flow nodes, UI setups and more. Scripts are also reloaded at runtime when edited, allowing for a truly intuitive developer experience.</p>
+			</div>
+		</div>
+		
+		<div id="content" style="width: 48%; float: right;">
+			<div id="content_wrap">
+				<h2>Usage video</h2>
+				<p>The video below demonstrates some of the features CryMono delivers to developers.</p>
+				<center><iframe width="402" height="226" src="http://www.youtube.com/embed/ExxYubYKoMg" frameborder="0" allowfullscreen></iframe></center>
+			</div>
+		</div>
+		
+		<div id="content" style="width: 50%;">
+			<div id="content_wrap">
+				<h2>C# Entity Sample</h2>
+				<p>The code sample below demonstrates how easy it is to create an CryENGINE entity support model loading and physicalization. Simply drop the script into Game\Scripts\Entities and it will be automatically loaded and registered on engine startup.</p></p>
+				
+				<div class="code">
+					<h3>View Code</h3>
+					<code>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+<span class="kwrd">using</span> CryEngine;
+
+<span class="kwrd">namespace</span> CryGameCode.Entities
+{
+    [Entity(Category = <span class="str">"Physics"</span>)]
+    <span class="kwrd">public</span> <span class="kwrd">class</span> Rigidbody : Entity
+    {
+        [EditorProperty(Type = EntityPropertyType.Object)]
+        <span class="kwrd">public</span> <span class="kwrd">string</span> Model { <span class="kwrd">get</span> { <span class="kwrd">return</span> GetObjectFilePath(); } <span class="kwrd">set</span> { LoadObject(value); } }
+
+        [EditorProperty]
+        <span class="kwrd">public</span> <span class="kwrd">float</span> Mass { <span class="kwrd">get</span> { <span class="kwrd">return</span> Physics.Mass; } <span class="kwrd">set</span> { Physics.Mass = value; } }
+
+        <span class="kwrd">protected</span> <span class="kwrd">override</span> <span class="kwrd">void</span> OnReset(<span class="kwrd">bool</span> enteringGame)
+        {
+            Physics.Type = PhysicalizationType.Rigid;
+        }
+    }
+}
+</pre>
+					</code>
+				</div>
+			</div>
 		</div>
 	</div>
 	
-	<div id="content" style="width: 25%; float: right;">
-		<div id="content_wrap">
-			<h1><a name="contact">Contact me</a></h1>
-			<ul>
-				<li><strong>Phone</strong>: Given out on request</li>
-				<li><strong>Email</strong>: filip@inkdev.net</li>
-				<li><strong>Skype</strong>: use above email</li>
-			</ul>
+	<hr class="section_end">
+	
+	<div id="section">
+		<span class="project_name">
+			<a name="snow">SNOW <span class="project_type">Free-to-play game (CryENGINE3)</span></a>
+		</span>
+		
+		<div class="fancy_link" style="float: right;">
+			<a href="http://www.snowthegame.com">
+				Official <strong>Site</strong>
+			</a>
+		</div>
+				
+		<div id="content" style="width: 50%;">
+			<div id="content_wrap">
+				<p>Powered by CryENGINE3, SNOW is a skiing and snowboarding game which looks to restart the winter sports genre.</p>
+				
+				<p>As the sole programmer on the SNOW team, I have been responsible for implementing all necessary features and gameplay elements, such as player customization, ski movement and more.</p>
+			</div>
+		</div>
+		
+		<div id="content" style="width: 48%; float: right;">
+			<div id="content_wrap">
+				<h2>Teaser</h2>
+				<iframe src="http://player.vimeo.com/video/55960538" width="402" height="226" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+			</div>
 		</div>
 	</div>
 	
-	<div id="content" style="width: 25%; float: right;">
-		<div id="content_wrap">
-			<h2>Used tools</h2>
-			<ul>
-				<li>Visual Studio</li>
-				<li>BeyondCompare</li>
-				<li>Notepad++</li>
-			</ul>
-		</div>
-	</div>
+	<hr class="section_end">
 	
-	<div id="content" style="width: 25%; float: right;">
-		<div id="content_wrap">
-			<h2>Source control usage</h2>
-			<ul>
-				<li>Git</li>
-				<li>SVN</li>
-			</ul>
+	<div id="section">
+		<span class="project_name"><a name="about">About me</a></span>
+		<div id="content" style="width: 73%">
+			<div id="content_wrap">
+				<p>My name is Filip Lundgren and I'm an aspiring Tools / Game Programmer with a drive to do what it takes to get where I want to be. I currently live in Vimmerby, Sweden where I work at Poppermost Productions AB.</p>
+				
+				<h2>Programming Languages</h2>
+				<ul>
+					<li><strong>C++</strong> - Primary language since 2009</li>
+					<li><strong>C#</strong> - Used since 2010, for both Game Scripting (see <a href="#crymono">CryMono</a>) and application development</li>
+					<li><strong>JAVA</strong> - Only used during programming lessons, experienced but not on a professional level</li>
+					<li><strong>Lua</strong> - Experienced with during usage of CryENGINE since 2008</li>
+					<li><strong>PHP</strong> - Beginner</li>
+					<li><strong>ActionScript</strong> - Have worked with for HUD / Menu implementation.</li>
+				</ul>
+
+				<h2>What I do</h2>
+				<ul>
+					<li><strong>Game Programming</strong> - Creation and expansion of critical game features.</li>
+					<li><strong>Tool Development</strong> - Creation and expansion of self-created tools, for example CryMono or applications to aid developers.</li>
+					<li><strong>Future thinking</strong> - Motivated to consider new ways to approach problems and future features.</li>
+					<li><strong>Team Management</strong> - Strong experience in team management during development of CryMono and its samples.</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div id="content" style="width: 25%; float: right;">
+			<div id="content_wrap">
+				<h1><a name="contact">Contact me</a></h1>
+				<ul>
+					<li><strong>Phone</strong>: Given out on request</li>
+					<li><strong>Email</strong>: filip@inkdev.net</li>
+					<li><strong>Skype</strong>: use above email</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div id="content" style="width: 25%; float: right;">
+			<div id="content_wrap">
+				<h2>Used tools</h2>
+				<ul>
+					<li>Visual Studio</li>
+					<li>BeyondCompare</li>
+					<li>Notepad++</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div id="content" style="width: 25%; float: right;">
+			<div id="content_wrap">
+				<h2>Source control usage</h2>
+				<ul>
+					<li>Git</li>
+					<li>SVN</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 </div>
+
 </body>
 </html>
