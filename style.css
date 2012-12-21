@@ -68,8 +68,9 @@ hr.section_end
 	margin-bottom: 10px;
 }
 
-h1
+h1, h1:hover
 {
+	display: inline;
 	font-size: 30px;
 	color: #3085BA;
 	font-weight: normal;
@@ -200,4 +201,18 @@ li
 	padding-left: 20px;
 
 	margin-bottom: 1px;
+}
+
+
+
+a:link, a:visited
+{
+	color: #3085BA;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a:hover
+{
+	color: #999;
 }
