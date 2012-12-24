@@ -1,12 +1,10 @@
 $(function() 
 {
-	$("code").hide();
+	$("code").slideDown();
+	$("code").slideUp();
 
 	$(".code").click(function() {
 	
-		$(this)
-			.find("code")
-			.slideToggle();
-	
+		$(this).find("code").slideToggle();
 	});
 });
