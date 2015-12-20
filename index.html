@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
 <head>
-  <title>Filip Lundgren - Tools / Game Programmer</title>
+  <title>Filip Lundgren - Engine Programmer</title>
   <link href="style.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" type="text/css" href="csharp.css" >
   
@@ -13,33 +13,73 @@
 <div id="wrapper">
 	<div id="header">
 		<p><span class="dev_name">Filip Lundgren</span></p>
-		<p><span class="dev_occupation">Game & Tools Programmer</span></p>
+		<p><span class="dev_occupation">Engine Programmer</span></p>
 	</div>
 	
 	<div id="section">
-		<span class="project_name">
-			<h1><a name="skills">Skills</a></h1>
-		</span>
-		
-		<div id="content">
+		<span class="project_name"><a name="about"><h1>About me</h1></a></span>
+		<div id="content" style="width: 73%">
 			<div id="content_wrap">
-				<div style="width: 33%; float: left;">
-					<h2>Games</h2>
-					
+				<p>My name is Filip Lundgren and I'm an Engine Programmer with a drive to do what it takes to get where I want to be. I currently live in Stockholm, Sweden where I work as Technical Director at Poppermost Productions AB.</p>
+				
+				<h2>Programming Languages</h2>
+				<ul>
+					<li><strong>C++</strong> - Primary language since 2009</li>
+					<li><strong>C#</strong> - Used since 2010, for both Game Scripting (see <a href="#crymono">CryMono</a>) and application development</li>
+					<li><strong>Lua</strong> - Experienced with during usage of CryENGINE since 2008</li>
+					<li><strong>ActionScript</strong> - Used for game UI implementation, for example <a href="#snow">SNOW</a> HUD & Main Menu.</li>
+				</ul>
+
+				<h2>What I do</h2>
+				<ul>
+					<li><strong>Game Programming</strong> - Creation and expansion of critical game features.</li>
+					<li><strong>Tool Development</strong> - Creation and expansion of self-created tools, for example CryMono or applications to aid developers.</li>
+					<li><strong>Engine Development</strong> - Development of engine-side features and tools with the goal of best runtime performance and end result.</li>
+					<li><strong>Future thinking</strong> - Motivated to consider new ways to approach problems and future features.</li>
+					<li><strong>Team Management</strong> - Strong experience in team management as Technical Director.</li>
+				</ul>
+				
+				<h2>Projects</h2>
+				<ul>
 					<li><a href="#snow">SNOW</a></li>
-				</div>
-				
-				<div style="width: 33%; float: left;">
-					<h2>Tools</h2>
-					
+					<li><a href="#crymono">Tanks</a></li>
 					<li><a href="#crymono">CryMono</a></li>
-					<li><a href="#toolbox">CryENGINE Toolbox</a></li>
-				</div>
+					<li><a href="#toolbox">CRYENGINE Toolbox</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<div id="content" style="width: 25%; float: right;">
+			<div id="content_wrap">
+				<a name="contact"><h1>Contact me</h1></a>
+				<ul>
+					<li><strong>Phone</strong>: Given out on request</li>
+					<li><strong>Email</strong>: filip@inkdev.net</li>
+					<li><strong>Skype</strong>: Given out on request</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div id="content" style="width: 25%; float: right;">
+			<div id="content_wrap">
+				<h2>Used tools</h2>
+				<ul>
+					<li>Visual Studio</li>
+					<li>BeyondCompare</li>
+					<li>Notepad++</li>
+					<li>TeamCity</li>
+					<li>JIRA</li>
+					<li>Confluence</li>
+					<li>Git</li>
+				</ul>
 				
-				<div style="width: 33%; float: right;">
-					<h2>Fundamentals</h2>
-					<p>I regularly use Git, also with previous experience of Subversion usage.</p>
-				</div>
+				<h2>Platforms</h2>
+				<ul>
+					<li>Windows</li>
+					<li>Linux</li>
+					<li>OS X</li>
+					<li>PS4</li>
+				</ul>
 			</div>
 		</div>
 	</div>
@@ -48,7 +88,7 @@
 	
 	<div id="section">
 		<span class="project_name">
-			<a name="snow"><h1>SNOW</h1> <span class="project_type">Free-to-play game (C++, C#, Flash)</span></a>
+			<a name="snow"><h1>SNOW</h1> <span class="project_type">Free-to-play game (C++, Flash / AS2) for PC and PS4</span></a>
 		</span>
 		
 		<div class="fancy_link" style="float: right;">
@@ -57,30 +97,57 @@
 			</a>
 		</div>
 				
-		<div id="content" style="width: 50%;">
-			<div id="content_wrap">
-				<p>Powered by CryENGINE3, SNOW is a skiing and snowboarding game which looks to restart the winter sports genre.</p>
-				
-				<p>As the sole programmer on the SNOW team, I have been responsible for implementing all necessary features and gameplay elements, such as player customization, ski movement and more.</p>
+		<div id="content" style="width: auto;">
+			<div id="content_wrap" style="padding: 10px;">
+				<img src="snow_3.jpg" width="432px"/>
 			</div>
 		</div>
 		
 		<div id="content" style="width: 48%; float: right;">
-			<div id="content_wrap">
-				<h2>Teaser</h2>
-				<iframe src="http://player.vimeo.com/video/55960538" width="402" height="226" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+			<div id="content_wrap" style="padding: 10px;">
+				<iframe id="ytplayer" type="text/html" width="412" height="243" src="https://www.youtube.com/embed/QT5ca_AmjIg?autoplay=0" frameborder="0">
+				</iframe>
 			</div>
 		</div>
-		
-		<div id="content" style="width: auto;">
-			<div id="content_wrap" style="padding: 10px;">
-				<img src="snow_ui.png"/>
+				
+		<div id="content" style="width: 50%;">
+			<div id="content_wrap">
+				<p>Powered by Crytek's CRYENGINE, SNOW is a skiing and snowboarding game which looks to restart the winter sports genre.</p>
+				
+				<p>As the CTO for Poppermost / SNOW, I served as the first technical developer on the team, and have managed the development of all systems from start of development to the current released version.</p>
+				
+				<p>I manage a growing team of 5+ programmers and provide plans and support for the entire company.</p>
+				
+				<h3>Responsibilities</h3>
+				<ul>
+					<li>Roadmap planning, including the integration of third-party tools and updates to services such as CRYENGINE.</li>
+					<li>Support for both technical and non-technical developers for development and organizational purposes</li>
+					<li>Authoring and oversight of documentation for development and company workflow</li>
+					<li>Development of major features for the game and extensions for the game engine</li>
+					<li>Integration of third-party software such as DeltaDNA, In-game Advertising, HTTP Inventory Backend and more</li>
+					<li>Continuous research on possible improvements of company and development workflow, including usage of JIRA, Agile, Documentation, Git and more.</li>
+				</ul>
 			</div>
 		</div>
 		
 		<div id="content" style="width: auto; float: right;">
 			<div id="content_wrap" style="padding: 10px;">
 				<img src="snow_mountains.png"/>
+			</div>
+		</div>
+		
+		<div id="content" style="width: 48%; float: right;">
+			<div id="content_wrap">
+				<h3>Developed Features</h3>
+				<ul>
+					<li>Skiing physics implementation with a focus on dynamic interaction with the environment</li>
+					<li>Dynamic generation of mesh for ski trails</li>
+					<li>Character clothing customization system</li>
+					<li>Fully 3D User Interface system for Virtual Reality</li>
+					<li>Extensions to CRYENGINE for game visuals, gameplay and development</li>
+					<li>Performance-critical statistics tracking and event-triggering system for Challenges, Tutorial and Achievements</li>
+					<li>Multiplayer movement syncing and prediction implementation</li>
+				</ul>
 			</div>
 		</div>
 	</div>
@@ -94,12 +161,6 @@
 				<span class="project_type">Developer tool (C++, C#)</span>
 			</a>
 		</span>
-		
-		<div class="fancy_link" style="float: right;">
-			<a href="http://crymono.inkdev.net">
-				Official <strong>Site</strong>
-			</a>
-		</div>
 		
 		<div id="content" style="width: 50%;">
 			<div id="content_wrap">
@@ -132,7 +193,7 @@
 		<div id="content" style="width: 50%;">
 			<div id="content_wrap">
 				<h2>C# Entity Sample</h2>
-				<p>The code sample below demonstrates how easy it is to create an CryENGINE entity with support for model loading and physicalization. Simply drop the script into Game\Scripts\Entities and it will be automatically loaded and registered on engine startup.</p></p>
+				<p>With a focus on the ability to rapidly prototype games, the code sample below demonstrates how easy it is to create an CRYENGINE entity with support for model loading and physicalization. Simply drop the script into Game\Scripts\Entities and it will be automatically loaded and registered on engine startup.</p></p>
 				
 				<div class="code">
 					<h3>View Code</h3>
@@ -194,59 +255,6 @@
 		
 		
 	<hr class="section_end">
-	
-	<div id="section">
-		<span class="project_name"><a name="about"><h1>About me</h1></a></span>
-		<div id="content" style="width: 73%">
-			<div id="content_wrap">
-				<p>My name is Filip Lundgren and I'm a Game & Tools Programmer with a drive to do what it takes to get where I want to be. I currently live in Vimmerby, Sweden where I work at Poppermost Productions AB.</p>
-				
-				<h2>Programming Languages</h2>
-				<ul>
-					<li><strong>C++</strong> - Primary language since 2009</li>
-					<li><strong>C#</strong> - Used since 2010, for both Game Scripting (see <a href="#crymono">CryMono</a>) and application development</li>
-					<li><strong>Lua</strong> - Experienced with during usage of CryENGINE since 2008</li>
-					<li><strong>ActionScript</strong> - Used for game UI implementation, for example <a href="#snow">SNOW</a> HUD & Main Menu.</li>
-				</ul>
-
-				<h2>What I do</h2>
-				<ul>
-					<li><strong>Game Programming</strong> - Creation and expansion of critical game features.</li>
-					<li><strong>Tool Development</strong> - Creation and expansion of self-created tools, for example CryMono or applications to aid developers.</li>
-					<li><strong>Future thinking</strong> - Motivated to consider new ways to approach problems and future features.</li>
-					<li><strong>Team Management</strong> - Strong experience in team management during development of CryMono and its samples.</li>
-				</ul>
-			</div>
-		</div>
-		
-		<div id="content" style="width: 25%; float: right;">
-			<div id="content_wrap">
-				<a name="contact"><h1>Contact me</h1></a>
-				<ul>
-					<li><strong>Phone</strong>: Given out on request</li>
-					<li><strong>Email</strong>: filip@inkdev.net</li>
-					<li><strong>Skype</strong>: i59xxx</li>
-				</ul>
-			</div>
-		</div>
-		
-		<div id="content" style="width: 25%; float: right;">
-			<div id="content_wrap">
-				<h2>Used tools</h2>
-				<ul>
-					<li>Visual Studio</li>
-					<li>BeyondCompare</li>
-					<li>Notepad++</li>
-				</ul>
-				
-				<h2>Source control</h2>
-				<ul>
-					<li>Git</li>
-					<li>SVN</li>
-				</ul>
-			</div>
-		</div>
-	</div>
 </div>
 
 </body>
